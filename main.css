@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  h1, h2{
+    text-align: center;
+    margin-top: 5%;
+  }
+  main {
+   padding: 20% 20%;
+   margin: 10% auto;
+   line-height: 28px;
+  }
+  form{
+    display: block;
+  }
+  .hidden {
+    display: none;
+  }
+  .results{
+    max-width: 600px;
+    margin: 0 auto;
+  }

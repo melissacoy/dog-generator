@@ -8,7 +8,7 @@ function onSubmit() {
         event.preventDefault();
         clearValues();
         submittedNumber();
-        fetchDogs();
+        getDogs();
     });
 }
 
@@ -23,10 +23,10 @@ function submittedNumber() {
 }
 
 //retrieves dog images from API
-function fetchDogs() {
+function getDogs() {
     fetch(`${endpoint}`)
         .then(response => response.json())
-        .then(responseJson => displayDog(responseJson))
+        .then(responseJson => displayDogs(responseJson))
         .catch(error => {
             console.log(error);
             alert('Something went wrong, check console.');
@@ -35,7 +35,7 @@ function fetchDogs() {
 }
 
 // appends dog image from the API into html
-function displayDog(responseJson) {
+function displayDogs(responseJson) {
     console.log(responseJson);
     for (let i = 0; i < responseJson.message.length; i++) {
         $(`.js-dogs`).append(`<img src="${responseJson.message[i]}" class="col-3 results-img">`);

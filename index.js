@@ -15,11 +15,15 @@ function onSubmit() {
 // captures number submitted/defaults to 3
 function submittedNumber() {
     userNum = $('.js-number').val();
+    //maximum # of 50
+    if (userNum >= 51){
+        alert("please enter a number between 1 and 50");
+    }
     // change empty submission to 3
-    if (userNum == "") {
+   else if (userNum == "") {
         userNum = 3;
     }
-    endpoint = "https://dog.ceo/api/breeds/image/random/" + userNum;
+    else endpoint = "https://dog.ceo/api/breeds/image/random/" + userNum;
 }
 
 //retrieves dog images from API
